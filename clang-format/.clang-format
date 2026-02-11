@@ -1,0 +1,117 @@
+# Requires Clang-Format >= 19.0
+# BasedOnStyle: Google
+
+##########
+## 对齐 ##
+##########
+
+# AlignConsecutiveDeclarations: AcrossEmptyLinesAndComments
+AlignConsecutiveAssignments: AcrossEmptyLinesAndComments
+AlignConsecutiveMacros: AcrossEmptyLinesAndComments
+AlignTrailingComments:
+  Kind: Always
+  OverEmptyLines: 2
+AlignConsecutiveShortCaseStatements:
+  Enabled: true
+  AcrossEmptyLines: true
+  AcrossComments: true
+  AlignCaseColons: true
+AlignAfterOpenBracket: Align
+
+################
+## 指针和引用 ##
+################
+
+PointerAlignment: Right
+
+##########
+## 空格 ##
+##########
+
+SpacesInParens: Custom
+SpacesInParensOptions:
+  Other: false
+
+SpaceBeforeParens: Custom
+SpaceBeforeParensOptions:
+  AfterControlStatements: true
+  AfterFunctionDeclarationName: false
+  AfterFunctionDefinitionName: false
+  # AfterNot: true
+  AfterOverloadedOperator: true
+
+SpacesInSquareBrackets: false
+SpaceBeforeSquareBrackets: false
+
+SpacesInAngles: false
+
+# SpaceAfterLogicalNot: true
+# SpaceAfterOperatorKeyword: false
+# SpaceAfterCStyleCast: true
+# SpaceBeforeCaseColon: false
+SpacesBeforeTrailingComments: 2
+# SpaceBeforeAssignmentOperators: true
+# SpaceBeforeRangeBasedForLoopColon: false
+SpaceBeforeInheritanceColon: true
+
+##############
+## 合并单行 ##
+##############
+
+AllowShortFunctionsOnASingleLine: Inline
+AllowShortIfStatementsOnASingleLine: WithoutElse
+AllowShortCaseLabelsOnASingleLine: true
+AllowShortEnumsOnASingleLine: true
+AllowShortNamespacesOnASingleLine: false
+AllowShortLoopsOnASingleLine: true
+AllowShortBlocksOnASingleLine: Always
+AllowShortLambdasOnASingleLine: All
+
+################
+## 大括号换行 ##
+################
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterClass: true
+  # AfterFunction: false
+  AfterControlStatement: MultiLine
+  BeforeElse: true
+  # AfterCaseLabel: true
+  AfterStruct: true
+  # AfterUnion: true
+  # AfterEnum: true
+  AfterNamespace: true
+  BeforeCatch: true
+
+##########
+## 缩进 ##
+##########
+
+IndentWidth: 4
+AccessModifierOffset: -2
+UseTab: Never
+NamespaceIndentation: All
+
+##########
+## 空行 ##
+##########
+MaxEmptyLinesToKeep: 2
+KeepEmptyLines:
+  AtEndOfFile: true
+EmptyLineBeforeAccessModifier: Always
+
+ColumnLimit: 100
+
+QualifierAlignment: Left
+
+SortIncludes:
+  Enabled: true
+  IgnoreCase: false
+IncludeBlocks: Regroup
+IncludeCategories:
+  - Regex: '^".*"'
+    Priority: 1
+  - Regex: '^<.*\.h>'
+    Priority: 2
+  - Regex: "^<[^.]*>"
+    Priority: 3

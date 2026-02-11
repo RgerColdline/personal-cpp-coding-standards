@@ -1,0 +1,50 @@
+# 启用关键检查组（覆盖常见问题场景）
+Checks: >
+  -*,
+  bugprone-*,
+  cert-*,
+  cppcoreguidelines-*,
+  google-readability-*,
+  hicpp-*,
+  misc-*,
+  modernize-use-nullptr,
+  modernize-use-auto,
+  performance-*,
+  readability-*,
+  readability-identifier-naming
+
+# 检查项精细化配置
+CheckOptions:
+  # 命名规范（故意设置严格规则，验证命名检查）
+  - key: readability-identifier-naming.ClassCase
+    value: CamelCase
+  - key: readability-identifier-naming.MemberCase
+    value: lower_case
+  - key: readability-identifier-naming.MemberSuffix
+    value: _
+  - key: readability-identifier-naming.VariableCase
+    value: lower_case
+  - key: readability-identifier-naming.FunctionCase
+    value: lower_case
+
+  # 魔法数字（设置阈值便于验证）
+  - key: readability-magic-numbers.IgnoreAllNumbers
+    value: "false"
+  - key: readability-magic-numbers.IgnoreBitFieldsWidths
+    value: "true"
+
+  # 现代化建议（C++11+）
+  - key: modernize-use-nullptr.NullMacros
+    value: "NULL"
+  - key: modernize-use-auto.MinTypeNameLength
+    value: "10"
+
+  # 性能检查
+  - key: performance-unnecessary-value-param.WarnOnlyIfExpensive
+    value: "false"
+
+# 严格模式（CI 推荐）
+WarningsAsErrors: "*"
+
+# 头文件过滤（仅关注项目代码）
+HeaderFilterRegex: ".*src/.*"
