@@ -55,8 +55,10 @@ sudo pacman -S clang
 
 ## 集成vscode
 ---
-[9. IDE 集成 clang-format（Qt Creator 和 VSCode） | 明王讲QT](https://www.qt1024.cn/clang-format/9_clangIDE)
-直接看里面的2
+1. 随便把.clang-format丢进你的工作目录里面
+2. 在设置里打开formatOnSave
+
+只要对着文件保存，你的C/C++插件会自动帮你处理好一切
 
 ## 使用format需要知道的事
 

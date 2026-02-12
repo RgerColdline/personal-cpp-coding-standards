@@ -66,9 +66,9 @@ pacman -S mingw-w64-ucrt-x86_64-clang-tools-extra
 
 ### Ubuntu
 ---
-ai写的，未验证
 ```shell
 sudo apt install clang-tidy-18 # 推荐18+版本（支持C++20）
+sudo update-alternatives --install /usr/bin/clang-tidy clang-tidy /usr/bin/clang-tidy-18 100
 sudo update-alternatives --set clang-tidy /usr/bin/clang-tidy-18
 ```
 
@@ -127,7 +127,7 @@ endif(USE_CLANG_TIDY)
 > C_Cpp › Code Analysis › Clang Tidy: Enabled（智能感知是否启用clang-tidy关键开关）
 > C_Cpp › Code Analysis › Clang Tidy: Use Build Path
 
-然后再在`C_Cpp › Code Analysis › Clang Tidy: Path`里面写上你的`clang-tidy`可执行程序的路径（Windows一定是完整路径，因为神秘原因，扩展不继承vscode环境变量，不能只写clang-tidy）（linux目前Arch留空亦可启用，Ubuntu未实验）
+然后再在`C_Cpp › Code Analysis › Clang Tidy: Path`里面写上你的`clang-tidy`可执行程序的路径（Windows一定是完整路径，因为神秘原因，扩展不继承vscode环境变量，不能只写clang-tidy）（linux目前留空即可）
 3. .clang-tidy的路径不用填，会自动检测，如果真有需要设置我再看看
 4. 在.vscode里面的`c_cpp_properties.json`里面加上
 ```json
