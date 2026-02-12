@@ -117,7 +117,13 @@ if(USE_CLANG_TIDY)
   endif()
 endif(USE_CLANG_TIDY)
 ```
-其中option后面的ON可以用OFF TRUE FALSE 1 0等表示开关
+其中`option`后面的`ON`可以用`OFF` `TRUE` `FALSE` `1` `0`等表示开关
+
+ROS环境需要将其中`--header-filter`一项改为以下内容，再保存之后`catkin_make`，即可产生对代码严格审查导致的报错（说明配置成功）
+```cmake
+      "--header-filter=${CMAKE_SOURCE_DIR}/src/<your_package_name>/**"
+```
+
 如需调整配置请告知我
 ### 2. 编写即用：
 
